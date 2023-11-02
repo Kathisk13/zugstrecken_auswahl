@@ -1,0 +1,10 @@
+Awanst: Ausweichanschlussstelle
+Abzw: Abzweigstelle
+Bf: Bahnhof
+Bk: Blockstelle (regelt Einfahrt in Abschnitte, wo nur ein Zug fahren darf)
+Gp: ?
+Hp: Haltepunkt (Halt ohne Weichen)
+üst: Überleitstelle (Übergang zwischen zwei Gleisen einer Strecke)
+Anst: Anschlussstelle (Weiche zu Strecke, die nicht zur DB gehört)
+Museum: ?
+Strw: ?
