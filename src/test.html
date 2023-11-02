@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/src/node_modules/leaflet/dist/leaflet.css" />
+<style>
+    #map{
+        height: 95vh;
+    }
+</style>
+<script src="/src/node_modules/leaflet/dist/leaflet.js"></script>
+<script src="/kartendaten/osmium_railway_routes_reduced.geojson"></script>
+
+<body>
+    <div id="map"></div>
+    hallo
+
+<script>
+var map = L.map('map').setView([ 51.8673323, 10.0199826], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+function onEachFeature(feature, layer) {
+	let popupContent = `<p>type: ${feature.geometry.type}</p>`;
+	for (const [key, value] of Object.entries(feature.properties)){
+				popupContent += key + ": " + value + "<br>";
+	}
+
+	layer.bindPopup(popupContent);
+}
+
+const train_routes_layer = L.geoJSON(train_routes, {
+
+	style(feature) {
+		return feature.properties && feature.properties.style;
+	},
+
+	onEachFeature
+
+}).addTo(map);
+	   <!--fetch('/kartendaten/railway_routes_reduced.geojson').then(response=>response.json()).then(readStations).catch(error=>{-->
+					   <!--console.error(error);-->
+		<!--});-->
+
+function readStations(stationjson){
+    L.geoJSON(stationjson).addTo(map);
+    console.log("loading of geojson into map done");
+}
+</script>
+</body>
