@@ -1,0 +1,24 @@
+--keep=
+route=ferry =train =light_rail =monorail =railway
+line=rail =train =light_rail
+public_transport=station
+railway=station
+
+--drop=
+railway=platform
+
+--drop-nodes=
+railway!=station or public_transport!=station
+
+--keep-tags=all
+from=
+to=
+railway=
+disused=yes
+train=yes
+monorail=yes
+ref= uic_ref= ref_name= ref:ibnr= ref:IBNR= name= website= wheelchair=
+
+--keep-way-relation-tags=all
+route= line= type= state=
+

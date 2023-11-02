@@ -1,0 +1,4 @@
+route=railway, train, light_rail, monorail
+line=rail, train, light_rail
+n/public_transport=station
+n/railway=station
